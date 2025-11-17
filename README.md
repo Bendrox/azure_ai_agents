@@ -12,10 +12,8 @@ Agent Framework**, and serverless Azure components.
 
 ## Technologies & Services
 
--   **Azure AI Foundry**\
-    <https://azure.microsoft.com/products/ai-foundry>
--   **Microsoft Agent Framework**\
-    <https://azure.microsoft.com/blog/introducing-microsoft-agent-framework/>
+-   **Azure AI Foundry**
+-   **Microsoft Agent Framework**
 -   **Azure Functions** (serverless orchestration)
 -   **Azure Blob Storage** (persistent storage)
 -   **Azure Queue Storage** (event-driven workflows)
@@ -23,10 +21,10 @@ Agent Framework**, and serverless Azure components.
 
 ## Project Goals
 
--   Explore agents & multi-agent architectures on Azure\
--   Prototype tools, actions, and agent capabilities\
+-   Explore agents & multi-agent architectures on Azure
+-   Prototype tools, actions, and agent capabilities
 -   Experiment with cloud integrations (Functions, Queues, Blobs,
-    APIM...)\
+    APIM...)
 -   Build reusable components and patterns for future agent projects
 
 
