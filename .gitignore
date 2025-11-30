@@ -1,3 +1,10 @@
 .env
 to_do.txt
 azure_doc_ref
+legi_fr_tools.py
+custom_tools/
+
+/custom_tools
+/custom_tools/legi_fr_tools.py
+
+

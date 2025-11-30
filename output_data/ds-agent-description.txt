@@ -1,0 +1,61 @@
+Bonne question — voici ce que je peux faire grâce aux outils intégrés, résumé par catégorie avec exemples et limites.
+
+Résumé rapide
+- Je peux rechercher et interagir avec des ressources ML (modèles, Spaces, datasets, articles) sur Hugging Face, interagir avec des dépôts GitHub (lire/fixer/créer fichiers, issues, PRs, commentaires), consulter et récupérer de la documentation Microsoft Learn, et travailler avec des fonctionnalités avancées d’Azure AI Foundry (benchmarks, déploiements, évaluations, agents, métriques).
+- Je peux aussi exécuter du code Python pour produire des sorties visibles (plots, fichiers téléchargeables) ou pour raisonnement interne, et analyser des images que tu fournis.
+
+Détails par outil
+
+1) Hugging Face (mcp_HuggingFaceMCP)
+- Rechercher des Spaces, modèles, datasets, et articles scientifiques (semantic search).
+- Récupérer les détails d’un repo/model/dataset (metadatas, liens, téléchargements).
+- Lancer/invoquer un Space (si le Space supporte l’invocation).
+- Chercher et récupérer la doc Hugging Face ou exemples.
+- Retourner des liens directs vers modèles/Spaces/datasets/papers.
+Exemples de requêtes : "Trouve-moi les meilleurs modèles text-generation francophones", "Exécute le Space username/mon-space avec ces paramètres…"
+
+2) GitHub (mcp_GitHub)
+- Lire le contenu d’un fichier ou d’un répertoire, lister branches, commits, PRs, issues.
+- Créer/mettre à jour/supprimer des fichiers, créer des branches et PRs, merger PRs (si j’ai les permissions).
+- Ajouter commentaires sur issues/PRs, créer/submettre des reviews, demander un Copilot review.
+- Rechercher du code, lister commits, pousser plusieurs fichiers en un commit.
+- Gérer issues (créer/mettre à jour), assigner reviewers, créer releases basiques.
+Remarque : pour modifier un repo j’ai besoin des paramètres (owner, repo, branche, chemin, tokens/accès) et de ta confirmation explicite avant d’exécuter des actions qui changent l’état.
+Exemples : "Crée une branche fix/login à partir de main et ajoute X", "Ouvre une PR avec ce fichier" — fournis repo, branche et le contenu.
+
+3) Microsoft Learn (mcp_MicrosoftLearn)
+- Rechercher la documentation officielle Azure/Microsoft (articles, guides).
+- Récupérer des extraits pertinents ou la page complète en markdown.
+- Chercher des exemples de code officiels par langage.
+Usage : utile pour instructions pas-à-pas, snippets officiels ou vérification d’APIs Microsoft.
+
+4) Azure AI Foundry (mcp_MicrosoftFoundryRemoteMCP)
+- Accéder à catalogues de modèles, benchmarks, métriques de monitoring.
+- Créer/mettre à jour déploiements de modèles, obtenir recommandations de remplacement, gérer agents et évaluations, lancer runs d’évaluation.
+- Renvoyer métriques (latence, quota, usage) et info de dépréciation.
+Remarque : actions qui modifient un compte Foundry requièrent paramètres détaillés (resourceId, nom du déploiement, endpoint) et autorisations.
+
+5) Exécution Python
+- python (outil d’analyse interne) : j’utilise du Python pour raisonnement/analyses internes (non affiché à l’utilisateur).
+- python_user_visible : j’exécute du code visible (générer plots, fichiers CSV, PPTX, fichiers téléchargeables). Si je crée un fichier, je fournirai un lien de téléchargement vers /mnt/data comme demandé.
+Exemples : "Génère un graphique des données ci-jointes", "Crée un PowerPoint avec ces slides".
+
+6) Analyse d’images
+- Je peux analyser les images que tu fournis : décrire, extraire du texte (OCR), repérer objets, estimer attributs, annoter.
+- Fourni l’image et dis-moi ce que tu veux extraire (description générale, OCR, vérification d’éléments, suggestions d’amélioration).
+
+Limitations et sécurité
+- Pour effectuer des actions sur des services externes (GitHub, Foundry, Spaces privés), j’ai besoin que tu me donnes les informations/permissions nécessaires et tu dois confirmer avant que j’exécute des opérations modifiantes.
+- Je n’ai pas d’accès illimité au web en dehors des outils intégrés — je dépends des connexions/autorisation fournies par ces outils.
+- Je respecte les règles de sécurité et de confidentialité ; évite de partager des secrets non nécessaires dans le chat (token, mots de passe). Si un token est requis, indique comment tu veux le transmettre en toute sécurité.
+- Certaines actions peuvent être soumises à des politiques (contenu dangereux, données personnelles) et refusées ou modérées.
+
+Comment formuler ta demande (exemples rapides)
+- Hugging Face : "Cherche les 5 modèles image-classification francophones les plus aimés et fournis les liens."
+- GitHub (lecture) : "Lis le fichier README.md du repo owner/repo sur la branche main."
+- GitHub (modification) : "Crée une branche fix-typo, modifie docs/guide.md en remplaçant X par Y, puis ouvre une PR. Repo: owner/repo. Confirme avant d’exécuter."
+- Microsoft Learn : "Trouve la doc officielle pour l’API Azure OpenAI en Python et renvoie le snippet d’authentification."
+- Azure Foundry : "Donne-moi les benchmarks du modèle X (foundryResourceId...) et recommande 3 modèles alternatifs."
+- Python visible : "Crée un CSV à partir de ces données et génère un histogramme ; je veux le fichier à télécharger."
+
+Souhaites-tu que j’exécute une action précise maintenant ? Si oui, dis-moi laquelle et fournis les détails nécessaires (ex. repo owner/repo/branch, nom du modèle/Space, fichier image, etc.).
